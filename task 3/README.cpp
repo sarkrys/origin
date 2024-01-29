@@ -1,11 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
-void structcons(string i, string x, int z,int c, int k) {
-    std::cout << "\nГород: "<< i<<"\nУлица: " << x<< "\nНомер дома: " << z<< "\nНомер квартиры: " <<c<< "\nИндекс: "<<k;
-;
-}
 struct Person {
     string town;
     string ulica;
@@ -23,8 +18,8 @@ int main() {
     person1.numhouse = 10;
     person1.numapp = 8;
     person1.index = 12345678;
-
-    structcons(person1.town, person1.ulica, person1.numhouse, person1.numapp, person1.index);
+    Person variable = { "Moscow" ,"Arbat" , 10 , 8 , 12345678 };
+    structcons(variable);
 
     Person person2;
     person2.town = "nigni nowgorod";
@@ -32,6 +27,11 @@ int main() {
     person2.numhouse = 12;
     person2.numapp = 4;
     person2.index = 87654321;
-    structcons(person2.town, person2.ulica, person2.numhouse, person2.numapp, person2.index);
+    Person variables = { "nigni nowgorod" ,"hz kakaya" ,12  ,4  , 87654321 };
+    structcons(variables);
     return 0;
+}
+void structcons(const Person& person) {
+
+    std::cout << "\nГород: " << person.town << "\nУлица: " << person.ulica << "\nНомер дома: " << person.numhouse << "\nНомер квартиры: " << person.numapp << "\nИндекс: " << person.index;
 }
